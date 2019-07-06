@@ -8,5 +8,5 @@ module.exports = () => {
   var localUrl = `mongodb://${config.host}/${config.database}`;
   var mongoUrl = envUrl ? envUrl : localUrl;
   console.log(mongoUrl);
-  return mongoose.connect(mongoUrl);
+  return mongoose.connect(mongoUrl, { useNewUrlParser: true });
 };
